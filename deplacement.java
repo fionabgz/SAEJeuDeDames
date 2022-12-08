@@ -1,15 +1,18 @@
 import java.util.Scanner;
-
 public class Deplacement {
 
 
     /*public static void main(String[] args) {
         System.out.println(Integer.parseInt(String.valueOf('3'))+Integer.parseInt(String.valueOf('3')));
     }*/
+    public static boolean caseVide(char[][]dammier,char colonne,char ligne){
+        int indiceColonne= Methodes.indiceLettreEnInt(colonne);
 
 
+    }
 
-     static void DepacementClassique(char[][] dammier , Scanner sc) {
+
+     static void DepacementClassique(char[][] dammier ,Scanner  sc) {
          String colonneInit, colonneDirection;
          int ligneInit, ligneDirection;
          String lettre = "ABCDEFGH";
