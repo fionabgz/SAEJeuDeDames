@@ -25,7 +25,7 @@ public class JoueurBlanc {
                     chaine = sc.nextLine();
                     indColonneArrivee = Methodes.indiceColonne(chaine.charAt(0));
                     indLigneArrivee = Methodes.indiceLigne(chaine.charAt(1));
-                } while (!Methodes.saisieCorrecte(chaine)||!Methodes.deplacementBlancPossible(damier,indiceLigne,indiceColonne,indLigneArrivee,indColonneArrivee));
+                } while (!Methodes.saisieCorrecte(chaine)||!Methodes.deplacementBlancPossible(damier,indiceLigne,indiceColonne,indLigneArrivee,indColonneArrivee)||damier[indLigneArrivee][indColonneArrivee]!='.');
                 Methodes.deplacementBlanc(damier,indiceLigne,indiceColonne,indLigneArrivee,indColonneArrivee);
 
     }
