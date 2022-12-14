@@ -45,7 +45,7 @@ public class Methodes {
         else if (ligne-ligneArrivee==2){
             if ((colonne-colonneArivee==2)&&damier[ligne-1][colonne-1]=='N')
                 return true;
-            else if ((colonne-colonneArivee==-2)&&damier[ligne+1][colonne+1]=='N')
+            else if ((colonne-colonneArivee==-2)&&damier[ligne-1][colonne+1]=='N')
                 return true;
             else
                 return false;
@@ -65,10 +65,10 @@ public class Methodes {
                 damier[ligneArrivee][colonneArivee] = 'B';
                 damier[ligne - 1][colonne - 1] = '.';
             }
-            else if ((colonne-colonneArivee==-2)&&damier[ligne+1][colonne+1]=='N'){
+            else if ((colonne-colonneArivee==-2)&&damier[ligne-1][colonne+1]=='N'){
                 damier[ligne][colonne] = '.';
                 damier[ligneArrivee][colonneArivee] = 'B';
-                damier[ligne +1][colonne +1] = '.';
+                damier[ligne -1][colonne +1] = '.';
             }
         }
     }
@@ -76,7 +76,7 @@ public class Methodes {
         if (ligne - ligneArrivee == -1 && (colonne - colonneArivee == 1 || colonne - colonneArivee == -1)) {
             return true;
         } else if (ligne - ligneArrivee == -2) {
-            if ((colonne - colonneArivee == 2) && damier[ligne - 1][colonne - 1] == 'B') {
+            if ((colonne - colonneArivee == 2) && damier[ligne + 1][colonne - 1] == 'B') {
                 return true;
             } else if ((colonne - colonneArivee == -2) && damier[ligne + 1][colonne + 1] == 'B') {
                 return true;
@@ -91,10 +91,10 @@ public class Methodes {
             damier[ligne][colonne] = '.';
             damier[ligneArrivee][colonneArivee] = 'N';
         } else if (ligne - ligneArrivee == -2) {
-            if ((colonne - colonneArivee == 2) && damier[ligne - 1][colonne - 1] == 'B') {
+            if ((colonne - colonneArivee == 2) && damier[ligne + 1][colonne - 1] == 'B') {
                 damier[ligne][colonne] = '.';
                 damier[ligneArrivee][colonneArivee] = 'N';
-                damier[ligne - 1][colonne - 1] = '.';
+                damier[ligne + 1][colonne - 1] = '.';
             } else if ((colonne - colonneArivee == -2) && damier[ligne + 1][colonne + 1] == 'B') {
                 damier[ligne][colonne] = '.';
                 damier[ligneArrivee][colonneArivee] = 'N';
