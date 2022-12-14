@@ -62,13 +62,10 @@ public class JoueurBlanc {
             tourBlanc(sc, damier);
             Damier.afficherPlateau(damier);
             tourNoir(sc,damier);
-            Damier.afficherPlateau(damier);
+            System.out.println();
             cpt++;
         } while (cpt < 10);
     }
-
-
-
 }
 
 /* 	A	B	C	D	E	F	G	H
