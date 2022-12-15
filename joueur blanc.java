@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 public class JoueurBlanc {
 
@@ -59,13 +58,41 @@ public class JoueurBlanc {
         int cpt = 0;
         do {
             Damier.afficherPlateau(damier);
-            tourBlanc(sc, damier);
+            tour(sc,damier,Damier.BLANC);
             Damier.afficherPlateau(damier);
-            tourNoir(sc,damier);
+            tour(sc,damier,Damier.NOIR);
             System.out.println();
             cpt++;
         } while (cpt < 10);
     }
+    public static void tour(Scanner sc,char[][]damier,char couleur) {
+        String chaine;
+        int indiceColonne,indiceLigne;
+        int indLigneArrivee ,indColonneArrivee;
+
+        /*String menuTour="C'est à votre tour \n" +
+                "taper 1 pour entrer/modifier les coordonnées de la case du pion que vous voulez changer \n" +
+                "taper 2  pour entrer/modifier les coordonées de la case sur laquelle vous voulez aller" +
+                "taper 3 pour valider ";
+        */
+        System.out.println(couleur+", c'est à votre tour");
+        do {
+            System.out.println("Quelle est la case du pion que vous voulez bouger?");
+            chaine = sc.nextLine();
+            indiceColonne = Methodes.indiceColonne(chaine.charAt(0));
+            indiceLigne = Methodes.indiceLigne(chaine.charAt(1));
+        } while (!Methodes.saisieCorrecte(chaine) || damier[indiceLigne][indiceColonne]!=couleur);
+
+        do {
+            System.out.println("Sur quelle case voulez vous aller ?");
+            chaine = sc.nextLine();
+            indColonneArrivee = Methodes.indiceColonne(chaine.charAt(0));
+            indLigneArrivee = Methodes.indiceLigne(chaine.charAt(1));
+        } while (!Methodes.saisieCorrecte(chaine)||!Methodes.deplacementPossible(damier,indiceLigne,indiceColonne,indLigneArrivee,indColonneArrivee)||damier[indLigneArrivee][indColonneArrivee]!='.');
+        Methodes.deplacement(damier,indiceLigne,indiceColonne,indLigneArrivee,indColonneArrivee);
+
+    }
+
 }
 
 /* 	A	B	C	D	E	F	G	H
