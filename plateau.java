@@ -1,6 +1,7 @@
 public class Damier {
         public final static char BLANC='B';
         public final static char NOIR='N';
+        public final static char VIDE='.';
         public static void main(String[] args) {
             afficherPlateau(tableauDuPlateau());
 
