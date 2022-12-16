@@ -27,70 +27,70 @@ public class Methodes {
         return (chaine.length() == 2 ||( chaine.charAt(0)>=65&&chaine.charAt(0)<=72)|| chaine.charAt(1) >= 0 || chaine.charAt(1) <= 7);
     }
 
-    public static boolean deplacementBlancPossible(char[][] damier, int ligne,int colonne,int ligneArrivee, int colonneArivee){
-        if (ligne-ligneArrivee==1&& (colonne-colonneArivee==1||colonne-colonneArivee==-1))
-            return true;
-        else if (ligne-ligneArrivee==2){
-            if ((colonne-colonneArivee==2)&&damier[ligne-1][colonne-1]=='N')
-                return true;
-            else if ((colonne-colonneArivee==-2)&&damier[ligne-1][colonne+1]=='N')
-                return true;
-            else
-                return false;
-        }
-        else
-            return false;
-    }
-
-    public static void deplacementBlanc(char [][] damier, int ligne,int colonne,int ligneArrivee, int colonneArivee) {
-        if (ligne-ligneArrivee==1&& (colonne-colonneArivee==1||colonne-colonneArivee==-1)) {
-            damier[ligne][colonne] = '.';
-            damier[ligneArrivee][colonneArivee] = 'B';
-        }
-        else if (ligne-ligneArrivee==2){
-            if ((colonne-colonneArivee==2)&&damier[ligne-1][colonne-1]=='N') {
-                damier[ligne][colonne] = '.';
-                damier[ligneArrivee][colonneArivee] = 'B';
-                damier[ligne - 1][colonne - 1] = '.';
-            }
-            else if ((colonne-colonneArivee==-2)&&damier[ligne-1][colonne+1]=='N'){
-                damier[ligne][colonne] = '.';
-                damier[ligneArrivee][colonneArivee] = 'B';
-                damier[ligne -1][colonne +1] = '.';
-            }
-        }
-    }
-    public static boolean deplacementNoirPossible(char[][] damier, int ligne,int colonne,int ligneArrivee, int colonneArivee) {
-        if (ligne - ligneArrivee == -1 && (colonne - colonneArivee == 1 || colonne - colonneArivee == -1)) {
-            return true;
-        } else if (ligne - ligneArrivee == -2) {
-            if ((colonne - colonneArivee == 2) && damier[ligne + 1][colonne - 1] == 'B') {
-                return true;
-            } else if ((colonne - colonneArivee == -2) && damier[ligne + 1][colonne + 1] == 'B') {
-                return true;
-            } else
-                return false;
-
-        } else
-            return false;
-    }
-    public static void deplacementNoir(char [][] damier, int ligne,int colonne,int ligneArrivee, int colonneArivee) {
-        if (ligne - ligneArrivee == -1 && (colonne - colonneArivee == 1 || colonne - colonneArivee == -1)) {
-            damier[ligne][colonne] = '.';
-            damier[ligneArrivee][colonneArivee] = 'N';
-        } else if (ligne - ligneArrivee == -2) {
-            if ((colonne - colonneArivee == 2) && damier[ligne + 1][colonne - 1] == 'B') {
-                damier[ligne][colonne] = '.';
-                damier[ligneArrivee][colonneArivee] = 'N';
-                damier[ligne + 1][colonne - 1] = '.';
-            } else if ((colonne - colonneArivee == -2) && damier[ligne + 1][colonne + 1] == 'B') {
-                damier[ligne][colonne] = '.';
-                damier[ligneArrivee][colonneArivee] = 'N';
-                damier[ligne + 1][colonne + 1] = '.';
-            }
-        }
-
-    }
+//    public static boolean deplacementBlancPossible(char[][] damier, int ligne,int colonne,int ligneArrivee, int colonneArivee){
+//        if (ligne-ligneArrivee==1&& (colonne-colonneArivee==1||colonne-colonneArivee==-1))
+//            return true;
+//        else if (ligne-ligneArrivee==2){
+//            if ((colonne-colonneArivee==2)&&damier[ligne-1][colonne-1]=='N')
+//                return true;
+//            else if ((colonne-colonneArivee==-2)&&damier[ligne-1][colonne+1]=='N')
+//                return true;
+//            else
+//                return false;
+//        }
+//        else
+//            return false;
+//    }
+//
+//    public static void deplacementBlanc(char [][] damier, int ligne,int colonne,int ligneArrivee, int colonneArivee) {
+//        if (ligne-ligneArrivee==1&& (colonne-colonneArivee==1||colonne-colonneArivee==-1)) {
+//            damier[ligne][colonne] = '.';
+//            damier[ligneArrivee][colonneArivee] = 'B';
+//        }
+//        else if (ligne-ligneArrivee==2){
+//            if ((colonne-colonneArivee==2)&&damier[ligne-1][colonne-1]=='N') {
+//                damier[ligne][colonne] = '.';
+//                damier[ligneArrivee][colonneArivee] = 'B';
+//                damier[ligne - 1][colonne - 1] = '.';
+//            }
+//            else if ((colonne-colonneArivee==-2)&&damier[ligne-1][colonne+1]=='N'){
+//                damier[ligne][colonne] = '.';
+//                damier[ligneArrivee][colonneArivee] = 'B';
+//                damier[ligne -1][colonne +1] = '.';
+//            }
+//        }
+//    }
+//    public static boolean deplacementNoirPossible(char[][] damier, int ligne,int colonne,int ligneArrivee, int colonneArivee) {
+//        if (ligne - ligneArrivee == -1 && (colonne - colonneArivee == 1 || colonne - colonneArivee == -1)) {
+//            return true;
+//        } else if (ligne - ligneArrivee == -2) {
+//            if ((colonne - colonneArivee == 2) && damier[ligne + 1][colonne - 1] == 'B') {
+//                return true;
+//            } else if ((colonne - colonneArivee == -2) && damier[ligne + 1][colonne + 1] == 'B') {
+//                return true;
+//            } else
+//                return false;
+//
+//        } else
+//            return false;
+//    }
+//    public static void deplacementNoir(char [][] damier, int ligne,int colonne,int ligneArrivee, int colonneArivee) {
+//        if (ligne - ligneArrivee == -1 && (colonne - colonneArivee == 1 || colonne - colonneArivee == -1)) {
+//            damier[ligne][colonne] = '.';
+//            damier[ligneArrivee][colonneArivee] = 'N';
+//        } else if (ligne - ligneArrivee == -2) {
+//            if ((colonne - colonneArivee == 2) && damier[ligne + 1][colonne - 1] == 'B') {
+//                damier[ligne][colonne] = '.';
+//                damier[ligneArrivee][colonneArivee] = 'N';
+//                damier[ligne + 1][colonne - 1] = '.';
+//            } else if ((colonne - colonneArivee == -2) && damier[ligne + 1][colonne + 1] == 'B') {
+//                damier[ligne][colonne] = '.';
+//                damier[ligneArrivee][colonneArivee] = 'N';
+//                damier[ligne + 1][colonne + 1] = '.';
+//            }
+//        }
+//
+//    }
     public static boolean deplacementPossible(char[][] damier, int ligne,int colonne,int ligneArrivee, int colonneArivee) {
         int epsilon;
         char couleurAdverse;
@@ -130,21 +130,51 @@ public class Methodes {
             couleurAdverse = Damier.NOIR;
         }
         if (ligne - ligneArrivee == epsilon && (colonne - colonneArivee == 1 || colonne - colonneArivee == -1)) {
-            damier[ligne][colonne] = '.';
+            damier[ligne][colonne] = Damier.VIDE;
             damier[ligneArrivee][colonneArivee] = couleur;
         } else if (ligne - ligneArrivee == epsilon*2) {
             if ((colonne - colonneArivee == 2) && damier[ligne - epsilon][colonne - 1] == couleurAdverse) {
-                damier[ligne][colonne] = '.';
+                damier[ligne][colonne] = Damier.VIDE;
                 damier[ligneArrivee][colonneArivee] = couleur;
-                damier[ligne - epsilon ][colonne - 1] = '.';
+                damier[ligne - epsilon ][colonne - 1] = Damier.VIDE;
             } else if ((colonne - colonneArivee == -2) && damier[ligne - epsilon][colonne + 1] == couleurAdverse) {
-                damier[ligne][colonne] = '.';
+                damier[ligne][colonne] = Damier.VIDE;
                 damier[ligneArrivee][colonneArivee] = couleur;
-                damier[ligne -epsilon][colonne + 1] = '.';
+                damier[ligne -epsilon][colonne + 1] = Damier.VIDE;
             }
         }
-
     }
+//    public static boolean priseMultiplePossible(char[][]damier,int ligne,int colonne,int ligneArrivee,int colonneArrivee){
+//        int epsilon ;
+//        char couleurAdverse;
+//        if (damier[ligne][colonne] == Damier.NOIR){
+//            epsilon = -1;
+//            couleurAdverse= Damier.BLANC;
+//        } else {
+//            epsilon = 1;
+//            couleurAdverse = Damier.NOIR;
+//        }
+//        if (ligne-ligneArrivee==epsilon*4){
+//            if
+//        }
+    public static boolean prisePossible(char[][]damier , int ligne, int colonne){
+        int epsilon ;
+        char couleurAdverse;
+        if (damier[ligne][colonne] == Damier.NOIR){
+            epsilon = -1;
+            couleurAdverse= Damier.BLANC;
+        } else {
+            epsilon = 1;
+            couleurAdverse = Damier.NOIR;
+        }
+        if (colonne==0)
+            return(damier[ligne-epsilon][colonne+1]==couleurAdverse && damier[ligne-epsilon*2][colonne+2]==Damier.VIDE);
+        else if (colonne==7)
+            return (damier[ligne-epsilon][colonne-1]==couleurAdverse && damier[ligne-epsilon*2][colonne-2]==Damier.VIDE);
+        else
+            return((damier[ligne-epsilon][colonne+1]==couleurAdverse && damier[ligne-epsilon*2][colonne+2]==Damier.VIDE)||(damier[ligne-epsilon][colonne-1]==couleurAdverse && damier[ligne-epsilon*2][colonne-2]==Damier.VIDE));
+    }
+
 }
 
 //  0   1   2   3   4   5   6   7
@@ -158,3 +188,4 @@ public class Methodes {
 6	 	B	 	B	 	B	 	B
 7	B	 	B	 	B	 	B
 */
+
