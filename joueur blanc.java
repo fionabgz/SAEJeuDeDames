@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class JoueurBlanc {
 
 //  public static void tourBlanc(Scanner sc,char[][]damier ) {
