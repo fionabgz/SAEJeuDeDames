@@ -371,7 +371,12 @@ public class Methodes {
         return possible;
     }
 	
-	
+   /* public static boolean DameDeplacementPossible(char[][] damier, int ligne, int colonne, int ligneArrivée, int colonneArrivée) {
+        if (damier[ligne][colonne] == 'b' && damier[ligneArrivée][colonneArrivée] == '.')//case diff1
+            return true;
+        else
+            return false;
+	*/    
     // A TESTER
     public static char finDePartie(char[][] damier) {
         int nbPionBlanc = 0;
