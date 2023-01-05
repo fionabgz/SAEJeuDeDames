@@ -370,6 +370,55 @@ public class Methodes {
         }
         return possible;
     }
+	
+	
+    // A TESTER
+    public static char finDePartie(char[][] damier) {
+        int nbPionBlanc = 0;
+        int nbPionNoir = 0;
+        int pionBlancDeplacementPossible = 0;
+        int pionNoirDeplacementPossible = 0;
+
+
+        //compte le nb de pion b/n sur le damier
+        for (int i = 0; i < damier.length; i++) {
+            for (int j = 0; j < damier[i].length; j++) {//trouver une condition qui compte pas les cases blanche
+                if (damier[i][j] == 'B') {
+                    nbPionBlanc++;
+                    //cherche si deplacement ou prise possible pour le pion blanc
+                    if (damier[i + 1][j - 1] == '.' || damier[i + 1][j + 1] == '.'         // verif si case adjacente noir sont libres
+
+                            || ( damier[i + 1][j - 1] == 'N' //verif si pion noir sur case sup gauche
+                            && damier[i + 2][j - 2] == '.' )  // verif si possibilité prise
+                            || ( damier[i + 1][j + 1] == 'N' //verif si pion noir sur case sup gauche
+                            && damier[i + 2][j + 2] == '.')                   // verif si possibilité prise
+                    ) {//verif possible deplacement case au dessus noir
+                        // voir si cdtion marche aux extrémité du damier (i=0 et 7, j =0 et 7
+                        pionBlancDeplacementPossible++;
+                    }
+                }
+
+                else if (damier[i][j] == 'N') {
+                    nbPionNoir++;
+                    if ( damier[i - 1][j - 1] == '.' || damier[i - 1][j + 1] == '.'        // verif si case adjacente noir sont libres
+                            || ( damier[i + 1][j - 1] == 'B' //verif si pion blanc sur case sup gauche
+                            && damier[i + 2][j - 2] == '.' )  // verif si possibilité prise
+                            || ( damier[i + 1][j + 1] == 'B' //verif si pion blanc sur case sup gauche
+                            && damier[i + 2][j + 2] == '.'))
+                        pionNoirDeplacementPossible++;
+
+
+                }
+            }
+        }
+        if (nbPionBlanc==0 || pionBlancDeplacementPossible==0){
+            return 'N';
+        }
+        else if(nbPionNoir==0 || pionNoirDeplacementPossible==0)
+            return 'B';
+        else
+            return 'X';// la partie continue
+    }
 
 
 }
